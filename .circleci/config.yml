@@ -1,6 +1,8 @@
 version: 2
 jobs:
   a-job:
+    docker:
+      - image: debian:stretch
     steps:
       - run:
           name: Print stuff
