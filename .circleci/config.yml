@@ -1,0 +1,14 @@
+version: 2
+jobs:
+  a-job:
+    steps:
+      - run:
+          name: Print stuff
+          command: echo stuff
+
+workflows:
+  version: 2
+  a-workflow:
+    jobs:
+      - a-job:
+          type: approval
