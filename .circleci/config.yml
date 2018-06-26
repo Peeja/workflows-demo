@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  a-job:
+  job2:
     docker:
       - image: debian:stretch
     steps:
@@ -8,9 +8,12 @@ jobs:
           name: Print stuff
           command: echo stuff
 
+
 workflows:
   version: 2
   a-workflow:
     jobs:
-      - a-job:
+      - job1:
           type: approval
+      - job2:
+          requires: job1
