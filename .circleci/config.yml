@@ -8,10 +8,12 @@ jobs:
           name: Print stuff
           command: echo stuff
 
-
 workflows:
   version: 2
   a-workflow:
     jobs:
       - job1:
           type: approval
+      - job2:
+          requires:
+            - job1
